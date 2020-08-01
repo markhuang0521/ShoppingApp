@@ -1,0 +1,198 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShopItemDetailActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/design_default_color_primary"
+        android:elevation="4dp" />
+
+    <Button
+        android:id="@+id/btn_add_to_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_detail"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:text="Add to Cart" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btn_add_to_cart"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+            <!-- name and price-->
+            <RelativeLayout
+                android:id="@+id/inner_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_detail_name"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="name" />
+
+                <TextView
+                    android:id="@+id/tv_detail_price"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="price"
+                    android:textColor="#F30D5B"
+                    android:textStyle="italic" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/iv_detail_image"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_below="@id/inner_layout"
+                android:layout_marginTop="5dp" />
+
+            <!--            start of star reviews -->
+            <RelativeLayout
+                android:id="@+id/layout_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_detail_image"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp">
+
+                <RelativeLayout
+                    android:id="@+id/layout_first_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_1st_fill_star"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_fill_star"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/iv_1st_empty_star"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_empty_star" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_2nd_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/layout_first_star">
+
+                    <ImageView
+                        android:id="@+id/iv_2nd_fill_star"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_fill_star"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/iv_2nd_empty_star"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_empty_star" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_3rd_star"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/layout_2nd_star">
+
+                    <ImageView
+                        android:id="@+id/iv_3rd_fill_star"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_fill_star"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/iv_3rd_empty_star"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_empty_star" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+            <!--            end of star reviews -->
+
+
+            <TextView
+                android:id="@+id/tv_detail_desc"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_star"
+                android:layout_marginTop="10dp"
+                android:text="desc"
+                android:textStyle="italic" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_detail_desc"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:textSize="16sp"
+                    android:id="@+id/text_review"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reviews: " />
+
+                <TextView
+                    android:textSize="16sp"
+
+                    android:id="@+id/tv_detail_add_review"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/text_review"
+                    android:text="(Add new review !) "
+                    android:textColor="#33A2FC"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_review"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_detail_add_review"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
